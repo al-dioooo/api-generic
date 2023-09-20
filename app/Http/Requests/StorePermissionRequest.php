@@ -13,7 +13,7 @@ class StorePermissionRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class StorePermissionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'application_id' => 'required|exists:applications,id',
+
+            'page' => 'required|string',
+            'action' => 'required|string',
+            'node' => 'required|string',
+
+            'name' => 'required|string',
+            'description' => 'nullable',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'application_id.exists' => 'Data not exists.'
         ];
     }
 }
