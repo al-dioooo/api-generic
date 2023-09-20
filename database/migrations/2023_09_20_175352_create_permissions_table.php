@@ -1,12 +1,11 @@
 <?php
 
 use App\Models\Application;
-use App\Models\Country;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreatePermissionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,22 +14,19 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('permissions', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name')->nullable();
-
             $table->foreignIdFor(Application::class)->nullable()->index();
-            $table->foreignIdFor(Country::class)->nullable()->index();
 
-            $table->string('phone')->unique();
+            $table->string('page', 50);
+            $table->string('action', 100);
+            $table->string('node', 100)->index();
 
-            $table->string('password');
+            $table->string('name', 100);
+            $table->string('description', 150);
 
-            $table->integer('otp');
-
-            $table->boolean('is_verified')->default(0)->comment('0 = Not yet verified, 1 = Verified');
-            $table->rememberToken();
+            $table->boolean('is_active')->default(1)->comment('0 = Inactive, 1 = Active');
 
             $table->string('created_by', 100)->nullable();
             $table->string('updated_by', 100)->nullable();
@@ -48,6 +44,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('permissions');
     }
 }

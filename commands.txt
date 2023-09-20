@@ -1,0 +1,8 @@
+php artisan make:model Application -Rrcsm
+php artisan make:model Country -Rrcsm
+php artisan make:model Currency -Rrcsm
+php artisan make:model Branch -Rrcsm
+php artisan make:model Role -Rrcsm
+php artisan make:model Pivot/RoleUserBranch --pivot
+php artisan make:model Permission -Rrcsm
+php artisan make:model PermissionRole --pivot

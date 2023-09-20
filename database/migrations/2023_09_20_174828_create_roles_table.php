@@ -1,12 +1,11 @@
 <?php
 
 use App\Models\Application;
-use App\Models\Country;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,22 +14,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name')->nullable();
-
             $table->foreignIdFor(Application::class)->nullable()->index();
-            $table->foreignIdFor(Country::class)->nullable()->index();
 
-            $table->string('phone')->unique();
-
-            $table->string('password');
-
-            $table->integer('otp');
-
-            $table->boolean('is_verified')->default(0)->comment('0 = Not yet verified, 1 = Verified');
-            $table->rememberToken();
+            $table->string('name', 100);
+            $table->boolean('is_super')->default(0)->comment('0 = False, 1 True');
 
             $table->string('created_by', 100)->nullable();
             $table->string('updated_by', 100)->nullable();
@@ -48,6 +38,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('roles');
     }
 }
