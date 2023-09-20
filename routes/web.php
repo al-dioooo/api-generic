@@ -3,9 +3,11 @@
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PermissionRoleController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +44,16 @@ Route::apiResource('permission', PermissionController::class);
 // Role
 Route::apiResource('role', RoleController::class);
 Route::apiResource('role/map', PermissionRoleController::class)->parameter('map', 'permissionRole');
+
+Route::apiResource('customer', CustomerController::class)->scoped([
+    'customer' => 'code'
+])->except('update');
+Route::patch('customer/{customer:id}', [CustomerController::class, 'update']);
+
+Route::apiResource('supplier', SupplierController::class)->scoped([
+    'supplier' => 'code'
+])->except('update');
+Route::patch('supplier/{supplier:id}', [SupplierController::class, 'update']);
 
 // Branch
 Route::get('/branch', [BranchController::class, 'index']);
