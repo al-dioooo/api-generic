@@ -10,12 +10,26 @@ class Branch extends Model
 {
     use HasFactory, SoftDeletes;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'code',
+
+        'contact',
+        'address'
+    ];
+
     public function roles()
     {
         return $this->belongsToMany(Role::class, 'role_user_branch')->withPivot(['user_id']);
     }
 
-    public function users() {
+    public function users()
+    {
         return $this->belongsToMany(User::class, 'role_user_branch')->withPivot(['role_id']);
     }
 
