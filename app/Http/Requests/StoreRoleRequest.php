@@ -13,7 +13,7 @@ class StoreRoleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class StoreRoleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string',
+
+            'application_id' => 'required|exists:applications,id',
+
+            'permission' => 'array|min:1',
+            'permission.*' => 'exists:permissions,id',
+
+            'created_by' => 'required|string|max:100'
         ];
     }
 }
