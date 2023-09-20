@@ -6,6 +6,7 @@ use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PermissionRoleController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,15 +24,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Application
 Route::apiResource('application', ApplicationController::class);
 
+// Currency
 Route::apiResource('currency', CurrencyController::class);
 
+// User
+Route::apiResource('user', UserController::class)->scoped([
+    'user' => 'phone'
+])->except('update');
+Route::patch('user/{user:id}', [UserController::class, 'update']);
+
+// Permission
 Route::apiResource('permission', PermissionController::class);
 
+// Role
 Route::apiResource('role', RoleController::class);
 Route::apiResource('role/map', PermissionRoleController::class)->parameter('map', 'permissionRole');
 
+// Branch
 Route::get('/branch', [BranchController::class, 'index']);
 Route::get('/branch/by', [BranchController::class, 'getByUser']);
 Route::get('/branch/{branch}', [BranchController::class, 'show']);
