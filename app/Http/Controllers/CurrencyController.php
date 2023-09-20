@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\Handler;
 use App\Http\Requests\StoreCurrencyRequest;
 use App\Http\Requests\UpdateCurrencyRequest;
 use App\Models\Currency;
+use Illuminate\Support\Facades\DB;
 
 class CurrencyController extends Controller
 {
@@ -15,17 +17,14 @@ class CurrencyController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $currency = Currency::get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return response()->json([
+            'message' => __('api.read.success', ['model' => __('currencies')]),
+            'data' => [
+                'currency' => $currency
+            ]
+        ]);
     }
 
     /**
@@ -36,7 +35,21 @@ class CurrencyController extends Controller
      */
     public function store(StoreCurrencyRequest $request)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            Currency::create($request->validated());
+
+            DB::commit();
+
+            return response()->json([
+                'message' => __('api.store.success', ['model' => __('currency')])
+            ]);
+        } catch (Handler $e) {
+            DB::rollBack();
+
+            return response()->json($e);
+        }
     }
 
     /**
@@ -47,18 +60,10 @@ class CurrencyController extends Controller
      */
     public function show(Currency $currency)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Currency  $currency
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Currency $currency)
-    {
-        //
+        return response()->json([
+            'message' => __('api.read.success', ['model' => __('currency')]),
+            'data' => $currency
+        ]);
     }
 
     /**
@@ -70,7 +75,21 @@ class CurrencyController extends Controller
      */
     public function update(UpdateCurrencyRequest $request, Currency $currency)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $currency->update($request->validated());
+
+            DB::commit();
+
+            return response()->json([
+                'message' => __('api.update.success', ['model' => __('currency')])
+            ]);
+        } catch (Handler $e) {
+            DB::rollBack();
+
+            return response()->json($e);
+        }
     }
 
     /**
@@ -81,6 +100,20 @@ class CurrencyController extends Controller
      */
     public function destroy(Currency $currency)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $currency->delete();
+
+            DB::commit();
+
+            return response()->json([
+                'message' => __('api.destroy.success', ['pluralization' => 'an', 'model' => 'currency']),
+            ]);
+        } catch (Handler $e) {
+            DB::rollBack();
+
+            return response()->json($e);
+        }
     }
 }

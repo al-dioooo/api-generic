@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\CurrencyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::apiResource('application', ApplicationController::class);
+Route::apiResource('currency', CurrencyController::class);
 
 Route::get('/branch', [BranchController::class, 'index']);
 Route::get('/branch/by', [BranchController::class, 'getByUser']);

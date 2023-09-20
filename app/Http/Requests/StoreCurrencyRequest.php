@@ -13,7 +13,7 @@ class StoreCurrencyRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class StoreCurrencyRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:100',
+            'code' => 'required|string|max:10',
+
+            'rate' => 'required|numeric'
         ];
     }
 }
