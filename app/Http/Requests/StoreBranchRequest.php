@@ -13,7 +13,7 @@ class StoreBranchRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class StoreBranchRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string',
+
+            'code' => 'required|unique:branches,code',
+
+            'contact' => 'nullable|string',
+            'address' => 'nullable|string'
         ];
     }
 }

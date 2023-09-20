@@ -13,7 +13,7 @@ class UpdateBranchRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class UpdateBranchRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' => 'required|exists:branches,id',
+
+            'name' => 'required|string',
+            'code' => "required|unique:branches,code,{$this->id}",
+
+            'contact' => 'nullable|string',
+            'address' => 'nullable|string'
         ];
     }
 }

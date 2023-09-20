@@ -19,3 +19,10 @@ Route::get('/', function () {
 });
 
 Route::apiResource('application', ApplicationController::class);
+
+Route::get('/branch', [BranchController::class, 'index']);
+Route::get('/branch/by', [BranchController::class, 'getByUser']);
+Route::get('/branch/{branch}', [BranchController::class, 'show']);
+Route::post('/branch/store', [BranchController::class, 'store']);
+Route::patch('/branch/update', [BranchController::class, 'update']);
+Route::delete('/branch/destroy', [BranchController::class, 'destroy']);
