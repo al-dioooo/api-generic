@@ -20,12 +20,15 @@ class SupplierController extends Controller
     public function index(Request $request)
     {
         if ($request->query('paginate') === "false") {
-            $supplier = Supplier::filter(request()->only(['search', 'name', 'from', 'to']))->latest()->get();
+            $supplier = Supplier::filter($request->only(['search', 'name', 'from', 'to']))->latest()->get();
         } else {
-            $supplier = Supplier::filter(request()->only(['search', 'name', 'from', 'to']))->latest()->paginate(15)->setPath('')->withQueryString();
+            $supplier = Supplier::filter($request->only(['search', 'name', 'from', 'to']))->latest()->paginate(15)->setPath('')->withQueryString();
         }
 
-        return response()->json($supplier);
+        return response()->json([
+            'message' => __('api.read.success', ['model' => __('supplier')]),
+            'data' => $supplier
+        ]);
     }
 
     /**

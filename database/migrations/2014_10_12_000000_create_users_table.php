@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
 
             $table->string('password');
 
-            $table->integer('otp');
+            $table->integer('otp')->nullable();
 
             $table->boolean('is_verified')->default(0)->comment('0 = Not yet verified, 1 = Verified');
             $table->rememberToken();

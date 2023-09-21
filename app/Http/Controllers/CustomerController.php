@@ -20,12 +20,15 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         if ($request->query('paginate') === "false") {
-            $customer = Customer::with('addresses')->filter(request()->only(['search', 'name', 'phone', 'from', 'to']))->latest()->get();
+            $customer = Customer::with('addresses')->filter($request->only(['search', 'name', 'phone', 'from', 'to']))->latest()->get();
         } else {
-            $customer = Customer::with('addresses')->filter(request()->only(['search', 'name', 'phone', 'from', 'to']))->latest()->paginate(15)->setPath('')->withQueryString();
+            $customer = Customer::with('addresses')->filter($request->only(['search', 'name', 'phone', 'from', 'to']))->latest()->paginate(15)->setPath('')->withQueryString();
         }
 
-        return response()->json($customer);
+        return response()->json([
+            'message' => __('api.read.success', ['model' => __('customer')]),
+            'data' => $customer
+        ]);
     }
 
     /**
@@ -44,10 +47,7 @@ class CustomerController extends Controller
             DB::commit();
 
             return response()->json([
-                'message' => __('api.store.success', ['model' => __('customer')]),
-                'data' => [
-                    'customer' => $customer->load('addresses')
-                ]
+                'message' => __('api.store.success', ['model' => __('customer')])
             ]);
         } catch (Handler $e) {
             DB::rollBack();
@@ -87,10 +87,7 @@ class CustomerController extends Controller
             DB::commit();
 
             return response()->json([
-                'message' => __('api.update.success', ['model' => __('customer')]),
-                'data' => [
-                    'customer' => $customer->load('addresses')
-                ]
+                'message' => __('api.update.success', ['model' => __('customer')])
             ]);
         } catch (Handler $e) {
             DB::rollBack();

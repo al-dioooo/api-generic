@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PermissionController;
@@ -28,6 +30,9 @@ Route::get('/', function () {
 
 // Application
 Route::apiResource('application', ApplicationController::class);
+
+// Country
+Route::apiResource('country', CountryController::class);
 
 // Currency
 Route::apiResource('currency', CurrencyController::class);
@@ -62,3 +67,10 @@ Route::get('/branch/{branch}', [BranchController::class, 'show']);
 Route::post('/branch/store', [BranchController::class, 'store']);
 Route::patch('/branch/update', [BranchController::class, 'update']);
 Route::delete('/branch/destroy', [BranchController::class, 'destroy']);
+
+// Authentication
+Route::post('/register', [AuthenticationController::class, 'register']);
+Route::post('/login', [AuthenticationController::class, 'login']);
+Route::post('/token/verify', [AuthenticationController::class, 'verifyToken']);
+Route::post('/otp/verify', [AuthenticationController::class, 'verifyOtp']);
+Route::post('/otp/resend', [AuthenticationController::class, 'resendOtp']);

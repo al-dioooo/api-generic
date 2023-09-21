@@ -56,8 +56,15 @@ class Customer extends Model
 
     public function scopeFilter($query, array $filters)
     {
-        $query->when($filters['search'] ?? null, function ($query, $search) {
-            $query->where('name', 'like', '%' . $search . '%');
+        $query->when($filters['search'] ?? null, function ($query, $value) {
+            $query->where('name', 'like', '%' . $value . '%');
+        })->when($filters['name'] ?? null, function ($query, $value) {
+            $query->where('name', 'like', '%' . $value . '%');
+        })->when($filters['phone'] ?? null, function ($query, $value) {
+            $query->where('phone', 'like', '%' . $value . '%');
+        })->when(($filters['from'] ?? null) && ($filters['to'] ?? null), function ($query) {
+            $query->whereDate('created_at', '>=', request('from'))
+                ->whereDate('created_at', '<=', request('to'));
         })->when($filters['trashed'] ?? null, function ($query, $trashed) {
             if ($trashed === 'with') {
                 $query->withTrashed();
