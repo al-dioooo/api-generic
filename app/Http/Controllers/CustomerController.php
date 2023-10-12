@@ -20,9 +20,9 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         if ($request->query('paginate') === "false") {
-            $customer = Customer::with('addresses')->filter($request->only(['search', 'name', 'phone', 'from', 'to']))->latest()->get();
+            $customer = Customer::filter($request->only(['search', 'code', 'name', 'phone', 'from', 'to']))->latest()->get();
         } else {
-            $customer = Customer::with('addresses')->filter($request->only(['search', 'name', 'phone', 'from', 'to']))->latest()->paginate(15)->setPath('')->withQueryString();
+            $customer = Customer::filter($request->only(['search', 'code', 'name', 'phone', 'from', 'to']))->latest()->paginate(15)->setPath('')->withQueryString();
         }
 
         return response()->json([

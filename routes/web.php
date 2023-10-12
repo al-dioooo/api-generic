@@ -9,6 +9,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PermissionRoleController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\RoleUserBranchController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,11 +38,13 @@ Route::apiResource('country', CountryController::class);
 // Currency
 Route::apiResource('currency', CurrencyController::class);
 
+// User, Role and Branch Map
+Route::apiResource('user/map', RoleUserBranchController::class)->parameter('map', 'roleUserBranch');
+
 // User
 Route::apiResource('user', UserController::class)->scoped([
     'user' => 'phone'
-])->except('update');
-Route::patch('user/{user:id}', [UserController::class, 'update']);
+]);
 
 // Permission
 Route::apiResource('permission', PermissionController::class);
@@ -52,21 +55,15 @@ Route::apiResource('role/map', PermissionRoleController::class)->parameter('map'
 
 Route::apiResource('customer', CustomerController::class)->scoped([
     'customer' => 'code'
-])->except('update');
-Route::patch('customer/{customer:id}', [CustomerController::class, 'update']);
+]);
 
 Route::apiResource('supplier', SupplierController::class)->scoped([
     'supplier' => 'code'
-])->except('update');
-Route::patch('supplier/{supplier:id}', [SupplierController::class, 'update']);
+]);
 
 // Branch
-Route::get('/branch', [BranchController::class, 'index']);
-Route::get('/branch/by', [BranchController::class, 'getByUser']);
-Route::get('/branch/{branch}', [BranchController::class, 'show']);
-Route::post('/branch/store', [BranchController::class, 'store']);
-Route::patch('/branch/update', [BranchController::class, 'update']);
-Route::delete('/branch/destroy', [BranchController::class, 'destroy']);
+Route::get('branch/by', [BranchController::class, 'getByUser']);
+Route::apiResource('branch', BranchController::class);
 
 // Authentication
 Route::post('/register', [AuthenticationController::class, 'register']);

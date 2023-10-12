@@ -19,14 +19,17 @@ class PermissionController extends Controller
     public function index(Request $request)
     {
         if ($request->query('group') === "false" && $request->query('paginate') === "false") {
-            $permission = Permission::filter($request->only('application_id'))->get(['id', 'page', 'action', 'node', 'name', 'description']);
+            $permissions = Permission::filter($request->only('application_id'))->get(['id', 'page', 'action', 'node', 'name', 'description']);
         } else if ($request->query('group') === "false" && $request->query('paginate') !== 'false') {
-            $permission = Permission::filter($request->only('application_id'))->paginate($request->query('paginate') ?? 15);
+            $permissions = Permission::filter($request->only('application_id'))->paginate($request->query('paginate') ?? 15);
         } else {
-            $permission = Permission::filter($request->only('application_id'))->get(['id', 'page', 'action', 'node', 'name', 'description'])->groupBy('page');
+            $permissions = Permission::filter($request->only('application_id'))->get(['id', 'page', 'action', 'node', 'name', 'description'])->groupBy('page');
         }
 
-        return response()->json($permission);
+        return response()->json([
+            'message' => __('api.read.success', ['model' => __('permissions')]),
+            'data' => $permissions
+        ]);
     }
 
     /**

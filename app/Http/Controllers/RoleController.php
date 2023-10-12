@@ -20,12 +20,15 @@ class RoleController extends Controller
     public function index(Request $request)
     {
         if ($request->query('paginate') === "false") {
-            $role = Role::with(['users', 'permissions'])->filter(request()->only(['search', 'application_id', 'name', 'from', 'to', 'super']))->latest()->get();
+            $roles = Role::with(['users', 'permissions', 'application'])->filter(request()->only(['search', 'application_id', 'name', 'from', 'to', 'super']))->latest()->get();
         } else {
-            $role = Role::with(['users', 'permissions'])->filter(request()->only(['search', 'application_id', 'name', 'from', 'to', 'super']))->latest()->paginate(15)->setPath('')->appends(request()->except('application_id'));
+            $roles = Role::with(['users', 'permissions', 'application'])->filter(request()->only(['search', 'application_id', 'name', 'from', 'to', 'super']))->latest()->paginate(15)->setPath('')->appends(request()->except('application_id'));
         }
 
-        return response()->json($role);
+        return response()->json([
+            'message' => __('api.read.success', ['model' => __('roles')]),
+            'data' => $roles
+        ]);
     }
 
     /**
@@ -65,13 +68,11 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        $role->load(['users', 'permissions', 'groupedPermissions', 'branches']);
+        $role->load(['users', 'permissions', 'branches']);
 
         return response()->json([
             'message' => __('api.read.success', ['model' => 'role']),
-            'data' => [
-                'role' => $role
-            ]
+            'data' => $role
         ]);
     }
 

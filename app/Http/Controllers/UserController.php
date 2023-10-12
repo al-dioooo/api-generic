@@ -20,12 +20,15 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if ($request->query('paginate') === "false") {
-            $user = User::with('roles:name')->filter(request()->only(['search', 'application_id']))->filterRole(request()->only(['super']))->latest()->get();
+            $users = User::with('roles:name')->filter($request->only(['search', 'application_id']))->filterRole($request->only(['super']))->latest()->get();
         } else {
-            $user = User::with('roles:name')->filter(request()->only(['search', 'application_id', 'name', 'phone', 'from', 'to']))->filterRole(request()->only(['super']))->latest()->paginate(15)->setPath('')->withQueryString();
+            $users = User::with('roles:name')->filter($request->only(['search', 'application_id', 'name', 'phone', 'from', 'to']))->filterRole($request->only(['super']))->latest()->paginate(15)->setPath('')->withQueryString();
         }
 
-        return response()->json($user);
+        return response()->json([
+            'message' => __('api.read.success', ['model' => __('user')]),
+            'data' => $users
+        ]);
     }
 
     /**
@@ -39,7 +42,10 @@ class UserController extends Controller
         DB::beginTransaction();
 
         try {
-            User::create($request->validated());
+            $payload = $request->validatedExcept('password');
+            $payload['password'] = bcrypt($request->input('password'));
+
+            User::create($payload);
 
             DB::commit();
 

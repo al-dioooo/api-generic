@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateBranchRequest extends FormRequest
+class StoreRoleUserBranchRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,9 @@ class UpdateBranchRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'code' => "required|unique:branches,code,{$this->branch->id}",
-
-            'contact' => 'nullable|string',
-            'address' => 'nullable|string'
+            'user_id' => 'required|exists:users,id',
+            'role_id' => 'required|exists:roles,id',
+            'branch_id' => 'required|exists:branches,id'
         ];
     }
 }

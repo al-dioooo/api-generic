@@ -34,22 +34,22 @@ class Role extends Model
 
     public function permissions()
     {
-        return $this->belongsToMany(Permission::class)->using(PermissionRole::class);
+        return $this->belongsToMany(Permission::class, 'permission_role')->using(PermissionRole::class);
     }
 
     public function groupedPermissions()
     {
-        return $this->belongsToMany(Permission::class)->groupBy('page');
+        return $this->belongsToMany(Permission::class, 'permission_role')->using(PermissionRole::class)->groupBy('page');
     }
 
     public function branches()
     {
-        return $this->belongsToMany(Branch::class)->using(RoleUserBranch::class)->withPivot(['user_id']);
+        return $this->belongsToMany(Branch::class, 'role_user_branch')->using(RoleUserBranch::class)->withPivot(['user_id']);
     }
 
     public function users()
     {
-        return $this->belongsToMany(User::class)->using(RoleUserBranch::class)->withPivot(['branch_id']);
+        return $this->belongsToMany(User::class, 'role_user_branch')->using(RoleUserBranch::class)->withPivot(['branch_id']);
     }
 
     public function scopeFilter($query, array $filters)

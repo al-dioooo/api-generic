@@ -26,7 +26,8 @@ class StoreUserRequest extends FormRequest
         return [
             'name' => 'required|string',
             'country_id' => 'required|exists:countries,id',
-            'phone' => "required|numeric|min:0|digits_between:10,13|unique:users,phone"
+            'phone' => "required|numeric|min:0|digits_between:10,13|unique:users,phone",
+            'password' => 'required|string'
         ];
     }
 }

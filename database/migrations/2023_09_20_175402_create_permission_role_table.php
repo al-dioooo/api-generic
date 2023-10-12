@@ -23,10 +23,8 @@ class CreatePermissionRoleTable extends Migration
 
             $table->string('created_by', 100)->nullable();
             $table->string('updated_by', 100)->nullable();
-            $table->string('deleted_by', 100)->nullable();
 
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

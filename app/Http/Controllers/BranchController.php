@@ -20,16 +20,14 @@ class BranchController extends Controller
     public function index(Request $request)
     {
         if ($request->query('paginate') === "false") {
-            $branch = Branch::filter(request()->only(['search', 'name', 'contact', 'address', 'from', 'to']))->latest()->get();
+            $branches = Branch::filter($request->only(['search', 'name', 'contact', 'address', 'from', 'to']))->latest()->get();
         } else {
-            $branch = Branch::filter(request()->only(['search', 'name', 'contact', 'address', 'from', 'to']))->latest()->paginate(15)->setPath('')->withQueryString();
+            $branches = Branch::filter($request->only(['search', 'name', 'contact', 'address', 'from', 'to']))->latest()->paginate(15)->setPath('')->withQueryString();
         }
 
         return response()->json([
-            'message' => __('api.read.success', ['model' => __('branch')]),
-            'data' => [
-                'branch' => $branch
-            ]
+            'message' => __('api.read.success', ['model' => __('branches')]),
+            'data' => $branches
         ]);
     }
 
@@ -49,9 +47,7 @@ class BranchController extends Controller
 
         return response()->json([
             'message' => __('api.read.success', ['model' => __('branch')]),
-            'data' => [
-                'branches' => $branches
-            ]
+            'data' => $branches
         ]);
     }
 
@@ -71,10 +67,7 @@ class BranchController extends Controller
             DB::commit();
 
             return response()->json([
-                'message' => __('api.store.success', ['pluralization' => 'a', 'model' => __('branch')]),
-                'data' => [
-                    'branch' => $branch
-                ]
+                'message' => __('api.store.success', ['pluralization' => 'a', 'model' => __('branch')])
             ]);
         } catch (Handler $e) {
             DB::rollBack();
@@ -101,16 +94,15 @@ class BranchController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateBranchRequest  $request
+     * @param  \App\Models\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBranchRequest $request)
+    public function update(UpdateBranchRequest $request, Branch $branch)
     {
         DB::beginTransaction();
 
         try {
-            $branch = Branch::find($request->input('id'));
-
-            $branch->update($request->validatedExcept('id'));
+            $branch->update($request->validated());
 
             DB::commit();
 
@@ -127,20 +119,14 @@ class BranchController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Models\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Branch $branch)
     {
         DB::beginTransaction();
 
         try {
-            $request->validate([
-                'id' => 'required|exists:branches,id'
-            ]);
-
-            $branch = Branch::find($request->input('id'));
-
             $branch->delete();
 
             DB::commit();

@@ -24,8 +24,6 @@ class UpdateSupplierRequest extends FormRequest
     public function rules()
     {
         return [
-            'code' => "required|unique:suppliers,code,{$this->supplier->id}",
-
             'name' => 'nullable',
 
             'email' => 'nullable',

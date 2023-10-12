@@ -19,367 +19,667 @@ class PermissionSeeder extends Seeder
         $permissions = [
             [
                 'application_id' => 1,
-                'page' => 'Booking',
-                'action' => 'Parent',
-                'node' => 'BK',
-                'name' => 'Booking',
-                'description' => 'Access To Booking Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Order',
-                'action' => 'Parent',
-                'node' => 'ORD',
-                'name' => 'Order',
-                'description' => 'Access To Order Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Manage Booking',
+                'page' => 'Brand',
                 'action' => 'View',
-                'node' => 'BK',
-                'name' => 'Manage Booking',
-                'description' => 'Access To Manage Booking Page',
+                'node' => 'brand.view',
+                'name' => 'View Brand',
+                'description' => 'Ability to view brand data list.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Detail Booking',
-                'action' => 'Parentless',
-                'node' => 'BK',
-                'name' => 'Detail Booking',
-                'description' => 'Access To Detail Booking Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Create Booking',
+                'page' => 'Brand',
                 'action' => 'Create',
-                'node' => 'BK',
-                'name' => 'Create Booking',
-                'description' => 'Access To Create Booking Page',
+                'node' => 'brand.create',
+                'name' => 'Create Brand',
+                'description' => 'Ability to create new brand data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Create Order',
+                'page' => 'Brand',
+                'action' => 'Update',
+                'node' => 'brand.update',
+                'name' => 'Update Brand',
+                'description' => 'Ability to update brand data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Brand',
+                'action' => 'Delete',
+                'node' => 'brand.delete',
+                'name' => 'Delete Brand',
+                'description' => 'Ability to delete brand data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Series',
+                'action' => 'View',
+                'node' => 'series.view',
+                'name' => 'View Brand',
+                'description' => 'Ability to view series data list.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Series',
                 'action' => 'Create',
-                'node' => 'ORD',
-                'name' => 'Create Order',
-                'description' => 'Access To Create Order Page',
+                'node' => 'series.create',
+                'name' => 'Create Brand',
+                'description' => 'Ability to create series data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Manage Order',
+                'page' => 'Series',
+                'action' => 'Update',
+                'node' => 'series.update',
+                'name' => 'Update Brand',
+                'description' => 'Ability to update series data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Series',
+                'action' => 'Delete',
+                'node' => 'series.delete',
+                'name' => 'Delete Brand',
+                'description' => 'Ability to delete series data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Attribute Group',
                 'action' => 'View',
-                'node' => 'ORD',
-                'name' => 'Manage Order',
-                'description' => 'Access To Manage Order Page',
+                'node' => 'attribute-group.view',
+                'name' => 'View Attribute Group',
+                'description' => 'Ability to view attribute group data list.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Detail Order',
-                'action' => 'Parentless',
-                'node' => 'ORD',
-                'name' => 'Detail Order',
-                'description' => 'Access To Detail Order Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Edit Order',
-                'action' => 'Edit',
-                'node' => 'ORD',
-                'name' => 'Edit Order',
-                'description' => 'Access To Edit Order Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Buat SPK',
-                'action' => 'Parentless',
-                'node' => 'ORD',
-                'name' => 'Buat SPK',
-                'description' => 'Access To Buat SPK Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Pemotongan Stock',
-                'action' => 'Parentless',
-                'node' => 'ORD',
-                'name' => 'Pemotongan Stock',
-                'description' => 'Access To Pemotongan Stock Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Hasil Pemotongan',
-                'action' => 'Parentless',
-                'node' => 'ORD',
-                'name' => 'Hasil Pemotongan',
-                'description' => 'Access To Hasil Pemotongan Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Request Stock',
-                'action' => 'Parent',
-                'node' => 'RS',
-                'name' => 'Request Stock',
-                'description' => 'Access To Request Stock Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Manage Request',
-                'action' => 'View',
-                'node' => 'RS',
-                'name' => 'Manage Request',
-                'description' => 'Access To Manage Request Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Detail Request',
-                'action' => 'Parentless',
-                'node' => 'RS',
-                'name' => 'Detail Request',
-                'description' => 'Access To Detail Request Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Create Request',
+                'page' => 'Attribute Group',
                 'action' => 'Create',
-                'node' => 'RS',
-                'name' => 'Create Request',
-                'description' => 'Access To Create Request Page',
+                'node' => 'attribute-group.create',
+                'name' => 'Create Attribute Group',
+                'description' => 'Ability to create attribute group data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Rejected Stock',
-                'action' => 'Parent',
-                'node' => 'RT',
-                'name' => 'Rejected Stock',
-                'description' => 'Access To Rejected Stock Page',
+                'page' => 'Attribute Group',
+                'action' => 'Update',
+                'node' => 'attribute-group.update',
+                'name' => 'Update Attribute Group',
+                'description' => 'Ability to update attribute group data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Manage Rejected',
+                'page' => 'Attribute Group',
+                'action' => 'Delete',
+                'node' => 'attribute-group.delete',
+                'name' => 'Delete Attribute Group',
+                'description' => 'Ability to delete attribute group data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Attribute',
                 'action' => 'View',
-                'node' => 'RT',
-                'name' => 'Manage Rejected',
-                'description' => 'Access To Manage Rejected Page',
+                'node' => 'attribute.view',
+                'name' => 'View Attribute',
+                'description' => 'Ability to view attribute data list.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Detail Rejected',
-                'action' => 'Parentless',
-                'node' => 'RT',
-                'name' => 'Detail Rejected',
-                'description' => 'Access To Detail Rejected Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Inventori stock',
-                'action' => 'Parentless',
-                'node' => 'Empty',
-                'name' => 'Inventori stock',
-                'description' => 'Access To Inventori stock Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Task Gudang',
-                'action' => 'Parent',
-                'node' => 'TG',
-                'name' => 'Task Gudang',
-                'description' => 'Access To Task Gudang Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Manage Task',
-                'action' => 'View',
-                'node' => 'TG',
-                'name' => 'Manage Task',
-                'description' => 'Access To Manage Task Page',
-                'is_active' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'application_id' => 1,
-                'page' => 'Send Stock',
+                'page' => 'Attribute',
                 'action' => 'Create',
-                'node' => 'Parentless',
-                'name' => 'Send Stock',
-                'description' => 'Access To Send Stock Page',
+                'node' => 'attribute.create',
+                'name' => 'Create Attribute',
+                'description' => 'Ability to create attribute data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Detail Task',
+                'page' => 'Attribute',
+                'action' => 'Update',
+                'node' => 'attribute.update',
+                'name' => 'Update Attribute',
+                'description' => 'Ability to update attribute data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Attribute',
+                'action' => 'Delete',
+                'node' => 'attribute.delete',
+                'name' => 'Delete Attribute',
+                'description' => 'Ability to delete attribute data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Need',
                 'action' => 'View',
-                'node' => 'Parentless',
-                'name' => 'Detail Task',
-                'description' => 'Access To Detail Task Page',
+                'node' => 'product-need.view',
+                'name' => 'View Product Need',
+                'description' => 'Ability to view product need data list.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Receive Stock',
+                'page' => 'Product Need',
                 'action' => 'Create',
-                'node' => 'Parentless',
-                'name' => 'Receive Stock',
-                'description' => 'Access To Receive Stock Page',
+                'node' => 'product-need.create',
+                'name' => 'Create Product Need',
+                'description' => 'Ability to create product need data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Dashboard',
-                'action' => 'View',
-                'node' => 'Parent',
-                'name' => 'Dashboard',
-                'description' => 'Access to Dashboard',
+                'page' => 'Product Need',
+                'action' => 'Update',
+                'node' => 'product-need.update',
+                'name' => 'Update Product Need',
+                'description' => 'Ability to update product need data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Purchase Order',
-                'action' => 'View',
-                'node' => 'PO',
-                'name' => 'Purchase Order',
-                'description' => 'Access to Purchase Order',
+                'page' => 'Product Need',
+                'action' => 'Delete',
+                'node' => 'product-need.delete',
+                'name' => 'Delete Product Need',
+                'description' => 'Ability to delete product need data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Return Order',
+                'page' => 'Product Family',
                 'action' => 'View',
-                'node' => 'RO',
-                'name' => 'Return Order',
-                'description' => 'Access to Return Order',
+                'node' => 'product-family.view',
+                'name' => 'View Product Family',
+                'description' => 'Ability to view product family data list.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Maintain Produk',
-                'action' => 'View',
-                'node' => 'MP',
-                'name' => 'Maintain Produk',
-                'description' => 'Access to Maintain Produk',
+                'page' => 'Product Family',
+                'action' => 'Create',
+                'node' => 'product-family.create',
+                'name' => 'Create Product Family',
+                'description' => 'Ability to create product family data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Maintain Supplier',
-                'action' => 'View',
-                'node' => 'MS',
-                'name' => 'Maintain Supplier',
-                'description' => 'Access to Maintain Supplier',
+                'page' => 'Product Family',
+                'action' => 'Update',
+                'node' => 'product-family.update',
+                'name' => 'Update Product Family',
+                'description' => 'Ability to update product family data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Maintain Cabang',
-                'action' => 'View',
-                'node' => 'MC',
-                'name' => 'Maintain Cabang',
-                'description' => 'Access to Maintain Cabang',
+                'page' => 'Product Family',
+                'action' => 'Delete',
+                'node' => 'product-family.delete',
+                'name' => 'Delete Product Family',
+                'description' => 'Ability to delete product family data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Maintain Role',
+                'page' => 'Product Class',
                 'action' => 'View',
-                'node' => 'MR',
-                'name' => 'Maintain Role',
-                'description' => 'Access to Maintain Role',
+                'node' => 'product-class.view',
+                'name' => 'View Product Class',
+                'description' => 'Ability to view product class data list.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ],
             [
                 'application_id' => 1,
-                'page' => 'Maintain Team',
-                'action' => 'View',
-                'node' => 'MT',
-                'name' => 'Maintain Team',
-                'description' => 'Access to Maintain Team',
+                'page' => 'Product Class',
+                'action' => 'Create',
+                'node' => 'product-class.create',
+                'name' => 'Create Product Class',
+                'description' => 'Ability to create product class data.',
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Class',
+                'action' => 'Update',
+                'node' => 'product-class.update',
+                'name' => 'Update Product Class',
+                'description' => 'Ability to update product class data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Class',
+                'action' => 'Delete',
+                'node' => 'product-class.delete',
+                'name' => 'Delete Product Class',
+                'description' => 'Ability to delete product class data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Line',
+                'action' => 'View',
+                'node' => 'product-line.view',
+                'name' => 'View Product Line',
+                'description' => 'Ability to view product line data list.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Line',
+                'action' => 'Create',
+                'node' => 'product-line.create',
+                'name' => 'Create Product Line',
+                'description' => 'Ability to create product line data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Line',
+                'action' => 'Update',
+                'node' => 'product-line.update',
+                'name' => 'Update Product Line',
+                'description' => 'Ability to update product line data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Line',
+                'action' => 'Delete',
+                'node' => 'product-line.delete',
+                'name' => 'Delete Product Line',
+                'description' => 'Ability to delete product line data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Type',
+                'action' => 'View',
+                'node' => 'product-type.view',
+                'name' => 'View Product Type',
+                'description' => 'Ability to view product type data list.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Type',
+                'action' => 'Create',
+                'node' => 'product-type.create',
+                'name' => 'Create Product Type',
+                'description' => 'Ability to create product type data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Type',
+                'action' => 'Update',
+                'node' => 'product-type.update',
+                'name' => 'Update Product Type',
+                'description' => 'Ability to update product type data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Type',
+                'action' => 'Delete',
+                'node' => 'product-type.delete',
+                'name' => 'Delete Product Type',
+                'description' => 'Ability to delete product type data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Brand',
+                'action' => 'View',
+                'node' => 'product-brand.view',
+                'name' => 'View Product Brand',
+                'description' => 'Ability to view product brand data list.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Brand',
+                'action' => 'Create',
+                'node' => 'product-brand.create',
+                'name' => 'Create Product Brand',
+                'description' => 'Ability to create product brand data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Brand',
+                'action' => 'Update',
+                'node' => 'product-brand.update',
+                'name' => 'Update Product Brand',
+                'description' => 'Ability to update product brand data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Brand',
+                'action' => 'Delete',
+                'node' => 'product-brand.delete',
+                'name' => 'Delete Product Brand',
+                'description' => 'Ability to delete product brand data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Series',
+                'action' => 'View',
+                'node' => 'product-series.view',
+                'name' => 'View Product Series',
+                'description' => 'Ability to view product series data list.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Series',
+                'action' => 'Create',
+                'node' => 'product-series.create',
+                'name' => 'Create Product Series',
+                'description' => 'Ability to create product series data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Series',
+                'action' => 'Update',
+                'node' => 'product-series.update',
+                'name' => 'Update Product Series',
+                'description' => 'Ability to update product series data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Series',
+                'action' => 'Delete',
+                'node' => 'product-series.delete',
+                'name' => 'Delete Product Series',
+                'description' => 'Ability to delete product series data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Model',
+                'action' => 'View',
+                'node' => 'product-model.view',
+                'name' => 'View Product Model',
+                'description' => 'Ability to view product model data list.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Model',
+                'action' => 'Create',
+                'node' => 'product-model.create',
+                'name' => 'Create Product Model',
+                'description' => 'Ability to create product model data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Model',
+                'action' => 'Update',
+                'node' => 'product-model.update',
+                'name' => 'Update Product Model',
+                'description' => 'Ability to update product model data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Model',
+                'action' => 'Delete',
+                'node' => 'product-model.delete',
+                'name' => 'Delete Product Model',
+                'description' => 'Ability to delete product model data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Unit',
+                'action' => 'View',
+                'node' => 'product-unit.view',
+                'name' => 'View Product Unit',
+                'description' => 'Ability to view product unit data list.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Unit',
+                'action' => 'Create',
+                'node' => 'product-unit.create',
+                'name' => 'Create Product Unit',
+                'description' => 'Ability to create product unit data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Unit',
+                'action' => 'Update',
+                'node' => 'product-unit.update',
+                'name' => 'Update Product Unit',
+                'description' => 'Ability to update product unit data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Product Unit',
+                'action' => 'Delete',
+                'node' => 'product-unit.delete',
+                'name' => 'Delete Product Unit',
+                'description' => 'Ability to delete product unit data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Discount',
+                'action' => 'View',
+                'node' => 'discount.view',
+                'name' => 'View Discount',
+                'description' => 'Ability to view discount data list.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Discount',
+                'action' => 'Create',
+                'node' => 'discount.create',
+                'name' => 'Create Discount',
+                'description' => 'Ability to create discount data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Discount',
+                'action' => 'Update',
+                'node' => 'discount.update',
+                'name' => 'Update Discount',
+                'description' => 'Ability to update discount data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Discount',
+                'action' => 'Delete',
+                'node' => 'discount.delete',
+                'name' => 'Delete Discount',
+                'description' => 'Ability to delete discount data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
+                'application_id' => 1,
+                'page' => 'Reward',
+                'action' => 'View',
+                'node' => 'reward.view',
+                'name' => 'View Reward',
+                'description' => 'Ability to view reward data list.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Reward',
+                'action' => 'Create',
+                'node' => 'reward.create',
+                'name' => 'Create Reward',
+                'description' => 'Ability to create reward data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Reward',
+                'action' => 'Update',
+                'node' => 'reward.update',
+                'name' => 'Update Reward',
+                'description' => 'Ability to update reward data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'application_id' => 1,
+                'page' => 'Reward',
+                'action' => 'Delete',
+                'node' => 'reward.delete',
+                'name' => 'Delete Reward',
+                'description' => 'Ability to delete reward data.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            // Cashier
             [
                 'application_id' => 2,
                 'page' => 'Petty Cash',
@@ -643,261 +943,533 @@ class PermissionSeeder extends Seeder
                 'is_active' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
+            ],
+
+            // Point of Sales
+            [
+                'application_id' => 3,
+                'page' => 'Main',
+                'action' => 'View',
+                'node' => 'main.view',
+                'name' => 'View Main',
+                'description' => 'Ability to view and create transaction in point of sales.',
+                'is_active' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]
         ];
 
         Permission::insert($permissions);
 
+        $permission_collection = collect(Permission::all(['node', 'id']));
+
         PermissionRole::insert([
+            // Warehouse
             [
-                'role_id' => 2,
-                'permission_id' => 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 2,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 3,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 4,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 5,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 6,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 7,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 8,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 9,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 10,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 11,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 12,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 13,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 14,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 15,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 16,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 17,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 18,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 19,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 20,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 21,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 22,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 23,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 24,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 25,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 26,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'role_id' => 2,
-                'permission_id' => 33,
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'brand.view')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'role_id' => 3,
-                'permission_id' => 20,
+                'permission_id' => $permission_collection->where('node', '=', 'brand.create')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'role_id' => 3,
-                'permission_id' => 21,
+                'permission_id' => $permission_collection->where('node', '=', 'brand.update')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'role_id' => 3,
-                'permission_id' => 22,
+                'permission_id' => $permission_collection->where('node', '=', 'brand.delete')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'role_id' => 3,
-                'permission_id' => 23,
+                'permission_id' => $permission_collection->where('node', '=', 'series.view')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'role_id' => 3,
-                'permission_id' => 24,
+                'permission_id' => $permission_collection->where('node', '=', 'series.create')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'role_id' => 3,
-                'permission_id' => 25,
+                'permission_id' => $permission_collection->where('node', '=', 'series.update')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
-                'role_id' => 4,
-                'permission_id' => 1,
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'series.delete')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
-                'role_id' => 4,
-                'permission_id' => 2,
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'attribute-group.view')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
-                'role_id' => 4,
-                'permission_id' => 3,
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'attribute-group.create')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
-                'role_id' => 4,
-                'permission_id' => 4,
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'attribute-group.update')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
-                'role_id' => 4,
-                'permission_id' => 5,
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'attribute-group.delete')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
-                'role_id' => 4,
-                'permission_id' => 6,
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'attribute.view')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
-                'role_id' => 4,
-                'permission_id' => 7,
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'attribute.create')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
-                'role_id' => 4,
-                'permission_id' => 8,
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'attribute.update')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'attribute.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-need.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-need.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-need.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-need.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-family.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-family.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-family.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-family.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-class.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-class.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-class.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-class.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-line.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-line.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-line.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-line.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-type.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-type.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-type.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-type.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-brand.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-brand.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-brand.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-brand.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-series.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-series.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-series.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-series.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-model.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-model.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-model.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-model.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-unit.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-unit.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-unit.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'product-unit.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'discount.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'discount.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'discount.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'discount.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'reward.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'reward.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'reward.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'reward.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+
+            // Finance
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'petty-cash.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'petty-cash.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'petty-cash.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'petty-cash.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'bill.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'invoice.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'invoice.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'invoice.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'invoice.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'transaction.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'transaction.pay')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'advance.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'advance.pay')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'advance.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'advance.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'verify.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'tax.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'tax.generate')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'tax.drop')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'merchant.view')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'merchant.create')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'merchant.update')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'role_id' => 3,
+                'permission_id' => $permission_collection->where('node', '=', 'merchant.delete')->first()->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+
+            // Waiter
+            [
                 'role_id' => 4,
-                'permission_id' => 9,
+                'permission_id' => $permission_collection->where('node', '=', 'main.view')->first()->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ]

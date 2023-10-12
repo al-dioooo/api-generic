@@ -60,6 +60,8 @@ class Customer extends Model
             $query->where('name', 'like', '%' . $value . '%');
         })->when($filters['name'] ?? null, function ($query, $value) {
             $query->where('name', 'like', '%' . $value . '%');
+        })->when($filters['code'] ?? null, function ($query, $value) {
+            $query->where('code', 'like', '%' . $value . '%');
         })->when($filters['phone'] ?? null, function ($query, $value) {
             $query->where('phone', 'like', '%' . $value . '%');
         })->when(($filters['from'] ?? null) && ($filters['to'] ?? null), function ($query) {

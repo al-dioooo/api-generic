@@ -17,7 +17,17 @@ class ApplicationSeeder extends Seeder
     {
         $applications = [
             [
+                'name' => 'Inventory',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
                 'name' => 'Cashier',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'name' => 'Point of Sales',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ]
