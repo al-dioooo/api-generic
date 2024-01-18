@@ -26,7 +26,7 @@ class StoreSupplierRequest extends FormRequest
         return [
             'code' => 'required|unique:suppliers,code',
 
-            'name' => 'required',
+            'name' => 'required|string',
 
             'email' => 'nullable',
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\CustomerController;
@@ -28,6 +29,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('configuration', [ConfigurationController::class, 'index']);
 
 // Application
 Route::apiResource('application', ApplicationController::class);

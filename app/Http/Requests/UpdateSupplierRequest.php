@@ -24,10 +24,11 @@ class UpdateSupplierRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'nullable',
+            'name' => 'required|string',
 
             'email' => 'nullable',
 
+            'address' => 'nullable',
             'bill_address' => 'nullable',
 
             'npwp' => 'nullable',

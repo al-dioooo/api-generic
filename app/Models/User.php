@@ -52,6 +52,12 @@ class User extends Authenticatable
                 ->whereDate('created_at', '<=', request('to'));
         })->when($filters['application_id'] ?? null, function ($query, $application) {
             $query->where('application_id', $application);
+        })->when(($filters['role'] ?? null) && ($filters['branch'] ?? null), function ($query) use ($filters) {
+            $query->whereHas('roles', function ($query) use ($filters) {
+                $query->where('roles.id', $filters['role'])->whereHas('branches', function ($query) use ($filters) {
+                    $query->where('branches.id', $filters['branch']);
+                });
+            });
         });
     }
 

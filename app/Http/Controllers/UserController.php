@@ -20,9 +20,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if ($request->query('paginate') === "false") {
-            $users = User::with('roles:name')->filter($request->only(['search', 'application_id']))->filterRole($request->only(['super']))->latest()->get();
+            $users = User::with('roles:name')->filter($request->only(['search', 'application_id', 'role', 'branch']))->filterRole($request->only(['super']))->latest()->get();
         } else {
-            $users = User::with('roles:name')->filter($request->only(['search', 'application_id', 'name', 'phone', 'from', 'to']))->filterRole($request->only(['super']))->latest()->paginate(15)->setPath('')->withQueryString();
+            $users = User::with('roles:name')->filter($request->only(['search', 'application_id', 'role', 'branch', 'name', 'phone', 'from', 'to']))->filterRole($request->only(['super']))->latest()->paginate(15)->setPath('')->withQueryString();
         }
 
         return response()->json([
